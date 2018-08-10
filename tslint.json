@@ -1,0 +1,23 @@
+{
+  "extends": ["tslint:recommended", "tslint-react"],
+  "defaultSeverity": "warning",
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts",
+      "node_modules/**/*.js"
+    ]
+  },
+  "rules": {
+    "quotemark": [true, "single", "jsx-double"],
+    "arrow-parens": [true, "ban-single-arg-parens"],
+    "object-literal-sort-keys": [
+      true,
+      "ignore-case",
+      "match-declaration-order"
+    ],
+
+    "curly": [true, "ignore-same-line"],
+    "interface-name": [true, "never-prefix"]
+  }
+}
