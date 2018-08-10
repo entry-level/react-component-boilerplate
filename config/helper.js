@@ -21,7 +21,7 @@ function getEntries(globPath, isDev) {
   const { DEV_PORT, DEV_IP } = helper;
   const devEntry = [
     'react-hot-loader/patch',
-    `webpack-hot-middleware/client?path=http://${DEV_IP}:${DEV_PORT}/__webpack_hmr`,
+    'webpack-hot-middleware/client',
   ];
 
   const entries = {};
