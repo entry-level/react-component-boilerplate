@@ -1,9 +1,10 @@
 {
-  "presets": [
-    ["env", {"modules": false}],
-    "react"
-  ],
+  "presets": [["env", { "modules": false }], "react"],
   "plugins": [
-    "react-hot-loader/babel"
+    "transform-decorators-legacy",
+    "transform-async-to-generator",
+    "react-hot-loader/babel",
+    "transform-class-properties",
+    "transform-runtime"
   ]
 }
