@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const { join } = require('path');
 
-const { dependencies = {}, peerDependencies = {} } = require('../package.json');
+const { dependencies = {}, peerDependencies = {} } = require('../../package.json');
 
 const BASE_DIR = join(__dirname, '..');
 

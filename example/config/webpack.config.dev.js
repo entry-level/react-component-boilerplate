@@ -1,15 +1,18 @@
-const { join, resolve } = require('path');
-const webpack = require('webpack');
-const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
+const { join, resolve } = require('path')
+const webpack = require('webpack')
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin')
 
-const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
-
-const manifest = require('../dll/vendor-manifest.json');
-const { DEV_PORT, DEV_IP, getEntries, getPagePlugins } = require('./helper');
-const BASE_DIR = join(__dirname, '..');
+const manifest = require('../dll/vendor-manifest.json')
+const { DEV_PORT, DEV_IP } = require('./helper')
+const BASE_DIR = join(__dirname, '..')
+const index = join(BASE_DIR, 'src', 'index.js')
 
 module.exports = {
-  entry: getEntries('./examples_src/**/*.js', true),
+  entry: {
+    index: [index, 'react-hot-loader/patch', 'webpack-hot-middleware/client'],
+  },
   output: {
     path: join(BASE_DIR, 'dist'),
     filename: '[name].[hash].js',
@@ -45,11 +48,16 @@ module.exports = {
           },
         ],
       },
-
     ],
   },
   plugins: [
-    ...getPagePlugins('./examples_src/**/*.html', true),
+    new HtmlWebpackPlugin({
+      filename: resolve(__dirname, '../dist/index.html'),
+      template: resolve(__dirname, '../src/index.html'),
+      inject: 'body',
+      chunks: ['index'],
+      alwaysWriteToDisk: false,
+    }),
     new AddAssetHtmlPlugin({
       filepath: resolve(__dirname, '../dll/*.dll.js'),
     }),
@@ -59,4 +67,4 @@ module.exports = {
       manifest,
     }),
   ],
-};
+}

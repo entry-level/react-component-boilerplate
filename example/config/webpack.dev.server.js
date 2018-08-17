@@ -6,7 +6,7 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 
 const { DEV_PORT, DEV_HOST } = require('./helper');
 const webpackConfig = require('./webpack.config.dev');
-const staticPath = path.join(__dirname, '..', 'examples');
+const staticPath = path.join(__dirname, '..', 'dist');
 
 const app = express();
 const compiler = webpack(webpackConfig);

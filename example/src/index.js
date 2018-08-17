@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { hot } from 'react-hot-loader'
 
-import Hello from '../lib/index.esm'
+import Hello from '../../lib/index.esm'
 
 const App = () => (
   <div>
