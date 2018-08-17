@@ -11,7 +11,9 @@
     "exclude": [
       "config/**/*.js",
       "node_modules/**/*.ts",
-      "node_modules/**/*.js"
+      "node_modules/**/*.js",
+      "lib/**/*.ts",
+      "dist/**/*.ts"
     ]
   },
   "rules": {

@@ -11,6 +11,7 @@
   "scripts": {
     "webpack:dll": "rimraf dll/* && webpack --config config/webpack.config.dll.js",
     "example": "npm run webpack:dll && node config/webpack.dev.server.js",
+    "example:fast": "node config/webpack.dev.server.js",
     "clean:lib": "rimraf lib/*",
     "build": "npm run clean:lib && rollup -c",
     "build:watch": "npm run clean:lib && rollup -c -w",
@@ -29,6 +30,11 @@
       "npm run format",
       "npm run lint:fix",
       "git add"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
     ]
   },
   "repository": {
