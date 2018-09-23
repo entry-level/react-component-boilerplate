@@ -1,19 +1,18 @@
 {
-  "name": "common-lib-boilerplate",
+  "name": "react-component-boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/index.cjs.js",
-  "module": "lib/index.esm.js",
+  "main": "dist/index.js",
   "files": [
-    "lib",
+    "dist",
     "README.md"
   ],
   "scripts": {
-    "clean:lib": "rimraf lib/*",
-    "build": "npm run clean:lib && rollup -c",
-    "build:watch": "npm run clean:lib && rollup -c -w",
-    "compile": "npm run clean:lib && tsc",
-    "compile:watch": "npm run clean:lib && tsc -w",
+    "clean:dist": "rimraf dist/*",
+    "build": "npm run clean:dist && rollup -c",
+    "build:watch": "npm run clean:dist && rollup -c -w",
+    "compile": "npm run clean:dist && tsc",
+    "cmpile:watch": "npm run clean:dist && tsc -w",
     "format": "prettier --write \"src/**/*.{js,ts,tsx}\"",
     "format:check": "prettier --list-different \"src/**/*.{js,ts,tsx}\"",
     "lint": "tslint -c tslint.json \"src/**/*.{ts,tsx}\"",
@@ -36,14 +35,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/forsigner/common-lib-boilerplate.git"
+    "url": "git+ssh://git@gitlab.com/forsigner/react-component-boilerplate.git"
   },
   "author": "forsigner",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/forsigner/common-lib-boilerplate/issues"
+    "url": "https://gitlab.com/forsigner/react-component-boilerplate/issues"
   },
-  "homepage": "https://gitlab.com/forsigner/common-lib-boilerplate#README",
+  "homepage": "https://gitlab.com/forsigner/react-component-boilerplate#README",
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
@@ -68,5 +67,8 @@
   "peerDependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
+  },
+  "dependencies": {
+    "react-component-boilerplate": "^0.2.3"
   }
 }

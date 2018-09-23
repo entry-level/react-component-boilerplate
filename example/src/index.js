@@ -1,16 +1,6 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { hot } from 'react-hot-loader'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
 
-import Hello from '../../lib/index.esm'
-
-const App = () => (
-  <div>
-    <div>Component example:</div>
-    <Hello name="foo" />
-  </div>
-)
-
-ReactDOM.render(<App />, document.getElementById('root'))
-
-hot(module)(App)
+ReactDOM.render(<App />, document.getElementById('root'));
