@@ -1,4 +1,5 @@
-import typescript from 'rollup-plugin-typescript2'
+import ts from 'rollup-plugin-typescript'
+import typescript from 'typescript'
 
 import pkg from './package.json'
 
@@ -20,8 +21,8 @@ export default {
   ],
   external: ['react', 'react-dom'],
   plugins: [
-    typescript({
-      rollupCommonJSResolveHack: true,
+    ts({
+      typescript,
     }),
   ],
 }
